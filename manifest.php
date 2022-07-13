@@ -22,8 +22,8 @@ use oat\taoTrainingPci\scripts\install\RegisterPciDateTimePickerIMS;
 
 return array(
     'name' => 'taoTrainingPci',
-	'label' => 'QTI PCI samples',
-	'description' => '',
+	'label' => 'PCI Training',
+	'description' => 'Contains PCIs for training purpose',
     'license' => 'GPL-2.0',
 	'author' => 'Open Assessment Technologies',
 	'managementRole' => 'http://www.tao.lu/Ontologies/generis.rdf#taoTrainingPciManager',
@@ -32,7 +32,7 @@ return array(
     ),
     'install' => array(
         'php'	=> array(
-			RegisterPciTextReaderIMS::class
+			RegisterPciDateTimePickerIMS::class
 		)
     ),
     'update' => 'oat\\taoTrainingPci\\scripts\\update\\Updater',

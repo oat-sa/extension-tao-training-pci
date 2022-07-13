@@ -1,35 +1,34 @@
 {
-
     "name": "oat-sa/extension-tao-training-pci",
-    "description" : "",
-    "type" : "tao-extension",
-    "authors" : [
+    "description": "",
+    "type": "tao-extension",
+    "authors": [
         {
-        "name": "Open Assessment Technologies"
+            "name": "Open Assessment Technologies"
         }
     ],
-    "keywords" : [
+    "keywords": [
         "tao",
         "computer-based-assessment"
     ],
-    "homepage" : "http://www.taotesting.com",
-    "license" : [
+    "homepage": "http://www.taotesting.com",
+    "license": [
         "GPL-2.0-only"
     ],
-    "extra" : {
-        "tao-extension-name" : "taoTrainingPci"
+    "extra": {
+        "tao-extension-name": "taoTrainingPci"
     },
-    "minimum-stability" : "dev",
+    "minimum-stability": "dev",
     "require": {
         "oat-sa/oatbox-extension-installer": "~1.1||dev-master",
-        "oat-sa/tao-core" : ">=47.0.0",
-        "oat-sa/generis" : ">=14.0.0",
-        "oat-sa/extension-tao-testqti" : ">=41.0.0",
-        "oat-sa/extension-tao-itemqti-pci" : ">=7.0.0"
+        "oat-sa/tao-core": ">=47.0.0",
+        "oat-sa/generis": ">=14.0.0",
+        "oat-sa/extension-tao-testqti": ">=41.0.0",
+        "oat-sa/extension-tao-itemqti-pci": ">=7.0.0"
     },
-    "autoload" : {
-        "psr-4" : {
-            "oat\\taoTrainingPci\\" : ""
+    "autoload": {
+        "psr-4": {
+            "oat\\taoTrainingPci\\": ""
         }
     }
 }

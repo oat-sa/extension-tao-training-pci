@@ -22,6 +22,9 @@ namespace oat\taoTrainingPci\scripts\install;
 
 use oat\taoQtiItem\model\portableElement\action\RegisterPortableElement;
 
+/**
+ * Registers and install the PCI
+ */
 class RegisterPciDateTimePickerIMS extends RegisterPortableElement
 {
     protected function getSourceDirectory(){

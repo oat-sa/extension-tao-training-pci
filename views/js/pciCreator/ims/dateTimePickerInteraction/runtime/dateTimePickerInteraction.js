@@ -16,13 +16,17 @@ define([
                 selectedDatetime = response[responseIdentifier].base.string;
             }
 
+            const label = document.createElement('label');
+            label.textContent = 'Pick a date';
             const picker = document.createElement('input');
             picker.type= 'datetime-local';
 
-            dom.appendChild(picker);
+            label.appendChild(picker);
+            dom.querySelector('.date-time-picker-interaction').appendChild(label);
 
             const changeHandler = () => selectedDatetime = picker.value;
             picker.addEventListener('change', changeHandler);
+
 
             const myInteraction = {
 

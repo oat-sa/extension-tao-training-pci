@@ -25,7 +25,15 @@
         },
         "libraries" : [],
         "src" : [
-            "./runtime/textReaderInteraction.js"
+            "./runtime/dateTimePickerInteraction.js"
+        ]
+    },
+     "creator" : {
+        "icon": "./icon.svg",
+        "hook": "./imsPciCreator.js",
+        "src" : [
+            "./imsPciCreator.js"
         ]
     }
+
 }
