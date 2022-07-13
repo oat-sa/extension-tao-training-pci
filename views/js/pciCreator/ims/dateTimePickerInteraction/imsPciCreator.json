@@ -3,7 +3,7 @@
     "typeIdentifier": "dateTimePickerInteraction",
     "label": "Date Time Picker",
     "description": "Let's the test taker select a date/time.",
-    "version": "1.0.0",
+    "version": "1.1.0",
     "author": "Bertrand Chevrier",
     "email": "contact@taotesting.com",
     "tags": [
@@ -17,10 +17,10 @@
         "cardinality": "single"
     },
     "runtime" : {
-        "hook" : "./runtime/dateTimePickerInteraction.js",
+        "hook" : "./runtime/dateTimePickerInteraction.min.js",
         "modules" : {
-            "dateTimePickerInteraction/runtime/dateTimePickerInteraction" : [
-                "runtime/dateTimePickerInteraction.js"
+            "dateTimePickerInteraction/runtime/dateTimePickerInteraction.min" : [
+                "runtime/dateTimePickerInteraction.min.js"
             ]
         },
         "libraries" : [],
@@ -30,7 +30,7 @@
     },
      "creator" : {
         "icon": "./icon.svg",
-        "hook": "./imsPciCreator.js",
+        "hook": "./imsPciCreator.min.js",
         "src" : [
             "./imsPciCreator.js"
         ]
