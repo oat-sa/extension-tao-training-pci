@@ -1,7 +1,7 @@
 define([
     'qtiCustomInteractionContext',
     'dateTimePickerInteraction/runtime/flatpickr',
-    'css!amdPickerInteraction/runtime/flatpickr.min.css'
+    'css!dateTimePickerInteraction/runtime/flatpickr.min.css'
 ], function (qtiCustomInteractionContext, flatpickr) {
     'use strict';
 
