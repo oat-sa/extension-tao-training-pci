@@ -20,13 +20,14 @@ define([
             }
 
             //build picker
+            const container = dom.querySelector('.date-time-picker-interaction');
             const label = document.createElement('label');
             label.textContent = 'Pick a date';
             const picker = document.createElement('input');
             picker.type= 'text';
 
             label.appendChild(picker);
-            dom.querySelector('.date-time-picker-interaction').appendChild(label);
+            container.appendChild(label);
 
             const myInteraction = {
 
@@ -48,21 +49,36 @@ define([
                     if (flatpickrInstance){
                         flatpickrInstance.destroy();
                     }
+                },
+
+                /* internal methods */
+
+                render({ minDate, maxDate } = {}) {
+                    return new Promise( resolve => {
+                        if (flatpickrInstance) {
+                            flatpickrInstance.destroy();
+                        }
+
+                        flatpickrInstance = flatpickr(picker, {
+                            enableTime: true,
+                            minDate,
+                            maxDate,
+                            onChange(selectedDates, dateStr) {
+                                selectedDateTime = dateStr;
+                            },
+                            onReady() {
+                                document.querySelector('.flatpickr-calendar').style.zIndex = 100000;
+                                resolve();
+                            }
+                        });
+                    });
                 }
             };
 
-            flatpickrInstance = flatpickr(picker, {
-                enableTime: true,
-                minDate: config.properties.minDate,
-                maxDate: config.properties.maxDate,
-                onChange(selectedDates, dateStr) {
-                    selectedDateTime = dateStr;
-                },
-                onReady() {
-                    document.querySelector('.flatpickr-calendar').style.zIndex = 100000;
-                    config.onready(myInteraction);
-                }
-            });
+            container.addEventListener('configChange', e => myInteraction.render(e.detail));
+
+            myInteraction.render(config.properties)
+                .then( () => config.onready(myInteraction) );
         }
     });
 });

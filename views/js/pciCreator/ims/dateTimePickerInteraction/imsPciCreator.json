@@ -19,16 +19,15 @@
     "runtime" : {
         "hook" : "./runtime/dateTimePickerInteraction.min.js",
         "modules" : {
-            "datePickerInteraction/runtime/dateTimePickerInteraction.min" : [
-                "runtime/datePickerTimeInteraction.min.js"
+            "dateTimePickerInteraction/runtime/dateTimePickerInteraction.min" : [
+                "runtime/dateTimePickerInteraction.min.js"
             ]
         },
-        "libraries" : [
+        "libraries" : [],
+        "src" : [
+            "./runtime/dateTimePickerInteraction.js",
             "./runtime/flatpickr.js",
             "./runtime/flatpickr.min.css"
-        ],
-        "src" : [
-            "./runtime/dateTimePickerInteraction.js"
         ]
     },
      "creator" : {
@@ -41,5 +40,4 @@
             "./creator/widget/states/Question.js"
         ]
     }
-
 }

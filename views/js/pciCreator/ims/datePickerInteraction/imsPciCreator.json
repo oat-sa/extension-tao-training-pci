@@ -1,17 +1,16 @@
 {
     "model": "IMSPCI",
     "typeIdentifier": "datePickerInteraction",
-    "label": "Date Time Picker",
+    "label": "Date Picker",
     "description": "Let's the test taker select a date/time.",
     "version": "1.0.0",
     "author": "Bertrand Chevrier",
     "email": "contact@taotesting.com",
     "tags": [
-        "date",
-        "time"
+        "date"
     ],
     "icon": "./icon.svg",
-    "short": "Date Time",
+    "short": "Date",
     "response": {
         "baseType": "string",
         "cardinality": "single"

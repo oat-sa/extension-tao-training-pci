@@ -14,11 +14,13 @@ define([
         }
     );
 
+
     stateQuestion.prototype.initForm = function() {
         const interaction = this.widget.element;
         const $form = this.widget.$form;
+        const element = this.widget.$container.find('.date-time-picker-interaction').get(0);
 
-        //render the form using the form template
+        //render the form using the
         this.widget.$form.html(
             `
 <div class="panel">
@@ -45,9 +47,13 @@ define([
         formElement.setChangeCallbacks($form, interaction, {
             minDate(i, value) {
                 i.properties.minDate = value;
+                console.log('props', i.properties);
+                element.dispatchEvent(new CustomEvent('configChange', { detail : i.properties }));
             },
             maxDate(i, value) {
                 i.properties.maxDate = value;
+                console.log('props', i.properties);
+                element.dispatchEvent(new CustomEvent('configChange', { detail : i.properties }));
             },
         });
     };
