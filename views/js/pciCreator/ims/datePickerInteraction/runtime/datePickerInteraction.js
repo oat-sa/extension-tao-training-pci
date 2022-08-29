@@ -4,44 +4,51 @@ define([
     'use strict';
 
     qtiCustomInteractionContext.register({
-        typeIdentifier: 'dateTimePickerInteraction',
+        typeIdentifier: 'datePickerInteraction',
 
         getInstance(dom, config, state) {
 
-            let selectedDatetime = null;
+            let selectedDate = null;
 
             const response = config.boundTo;
             const responseIdentifier = Object.keys(response)[0];
             if (response && response[responseIdentifier] && response[responseIdentifier].base) {
-                selectedDatetime = response[responseIdentifier].base.string;
+                selectedDate = response[responseIdentifier].base.string;
             }
 
+            //build picker
             const label = document.createElement('label');
             label.textContent = 'Pick a date';
             const picker = document.createElement('input');
-            picker.type= 'datetime-local';
+            picker.type= 'date';
+            if(config.properties.minDate) {
+                picker.setAttribute('min', config.properties.minDate);
+            }
+            if(config.properties.maxDate) {
+                picker.setAttribute('max', config.properties.maxDate);
+            }
 
             label.appendChild(picker);
-            dom.querySelector('.date-time-picker-interaction').appendChild(label);
+            dom.querySelector('.date-picker-interaction').appendChild(label);
 
-            const changeHandler = () => selectedDatetime = picker.value;
+            //handle events
+            const changeHandler = () => selectedDate = picker.value;
             picker.addEventListener('change', changeHandler);
-
 
             const myInteraction = {
 
                 getResponse() {
-                    if(!selectedDatetime) {
+                    if(!selectedDate) {
                         return { base: null };
                     }
-                    return { base : { string : selectedDatetime } };
+                    return { base : { string : selectedDate } };
                 },
 
                 getState() {
-                    if(!selectedDatetime) {
+                    if(!selectedDate) {
                         return { response : { base : null } };
                     }
-                    return { response : { base : { string : selectedDatetime } } };
+                    return { response : { base : { string : selectedDate } } };
                 },
 
                 oncompleted() {

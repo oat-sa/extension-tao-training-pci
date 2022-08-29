@@ -1,6 +1,6 @@
 {
     "model": "IMSPCI",
-    "typeIdentifier": "dateTimePickerInteraction",
+    "typeIdentifier": "datePickerInteraction",
     "label": "Date Time Picker",
     "description": "Let's the test taker select a date/time.",
     "version": "1.0.0",
@@ -17,22 +17,25 @@
         "cardinality": "single"
     },
     "runtime" : {
-        "hook" : "./runtime/dateTimePickerInteraction.js",
+        "hook" : "./runtime/datePickerInteraction.js",
         "modules" : {
-            "dateTimePickerInteraction/runtime/dateTimePickerInteraction" : [
-                "runtime/dateTimePickerInteraction.js"
+            "datePickerInteraction/runtime/datePickerInteraction" : [
+                "runtime/datePickerInteraction.js"
             ]
         },
         "libraries" : [],
         "src" : [
-            "./runtime/dateTimePickerInteraction.js"
+            "./runtime/datePickerInteraction.js"
         ]
     },
      "creator" : {
         "icon": "./icon.svg",
         "hook": "./imsPciCreator.js",
         "src" : [
-            "./imsPciCreator.js"
+            "./imsPciCreator.js",
+            "./creator/widget/Widget.js",
+            "./creator/widget/states/states.js",
+            "./creator/widget/states/Question.js"
         ]
     }
 

@@ -29,6 +29,6 @@ class RegisterPciDateTimePickerIMS extends RegisterPortableElement
 {
     protected function getSourceDirectory(){
         $viewDir = \common_ext_ExtensionsManager::singleton()->getExtensionById('taoTrainingPci')->getConstant('DIR_VIEWS');
-        return $viewDir.implode(DIRECTORY_SEPARATOR, ['js', 'pciCreator', 'ims', 'dateTimePickerInteraction']);
+        return $viewDir.implode(DIRECTORY_SEPARATOR, ['js', 'pciCreator', 'ims', 'datePickerInteraction']);
     }
 }

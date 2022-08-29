@@ -18,7 +18,7 @@
  *
  *
  */
-use oat\taoTrainingPci\scripts\install\RegisterPciDateTimePickerIMS;
+use oat\taoTrainingPci\scripts\install\RegisterPciDatePickerIMS;
 
 return array(
     'name' => 'taoTrainingPci',
@@ -32,7 +32,7 @@ return array(
     ),
     'install' => array(
         'php'	=> array(
-			RegisterPciDateTimePickerIMS::class
+			RegisterPciDatePickerIMS::class
 		)
     ),
     'update' => 'oat\\taoTrainingPci\\scripts\\update\\Updater',

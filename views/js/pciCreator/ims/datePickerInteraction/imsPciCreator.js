@@ -1,5 +1,7 @@
-define(['taoQtiItem/qtiCreator/widgets/interactions/customInteraction/Widget'], function (Widget) {
+define(['datePickerInteraction/creator/widget/Widget'], function (Widget) {
     'use strict';
+
+    const typeIdentifier = 'datePickerInteraction';
 
     return {
         /**
@@ -8,7 +10,7 @@ define(['taoQtiItem/qtiCreator/widgets/interactions/customInteraction/Widget'], 
         * @returns {String}
         */
         getTypeIdentifier() {
-            return 'dateTimePickerInteraction';
+            return typeIdentifier;
         },
 
         /**
@@ -28,7 +30,10 @@ define(['taoQtiItem/qtiCreator/widgets/interactions/customInteraction/Widget'], 
          * @returns {Object}
          */
         getDefaultProperties() {
-            return {};
+            return {
+                minDate: false,
+                maxDate: false
+            };
         },
 
         /**
@@ -40,12 +45,12 @@ define(['taoQtiItem/qtiCreator/widgets/interactions/customInteraction/Widget'], 
         afterCreatedt() {},
 
         /**
-         * (required) Gives the qti pci xml template
+         * (required) Gives the qti pci markup template
          *
-         * @returns {function} handlebar template
+         * @returns {function} template function
          */
         getMarkupTemplate() {
-            return  () => '<div class="date-time-picker-interaction"></div>';
+            return  () => '<div class="date-picker-interaction"></div>';
         },
 
         /**
