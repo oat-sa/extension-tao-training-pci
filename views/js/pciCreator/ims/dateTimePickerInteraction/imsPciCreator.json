@@ -1,0 +1,45 @@
+{
+    "model": "IMSPCI",
+    "typeIdentifier": "dateTimePickerInteraction",
+    "label": "Date Time Picker",
+    "description": "Let's the test taker select a date/time.",
+    "version": "1.0.0",
+    "author": "Bertrand Chevrier",
+    "email": "contact@taotesting.com",
+    "tags": [
+        "date",
+        "time"
+    ],
+    "icon": "./icon.svg",
+    "short": "Date Time",
+    "response": {
+        "baseType": "string",
+        "cardinality": "single"
+    },
+    "runtime" : {
+        "hook" : "./runtime/dateTimePickerInteraction.min.js",
+        "modules" : {
+            "datePickerInteraction/runtime/dateTimePickerInteraction.min" : [
+                "runtime/datePickerTimeInteraction.min.js"
+            ]
+        },
+        "libraries" : [
+            "./runtime/flatpickr.js",
+            "./runtime/flatpickr.min.css"
+        ],
+        "src" : [
+            "./runtime/dateTimePickerInteraction.js"
+        ]
+    },
+     "creator" : {
+        "icon": "./icon.svg",
+        "hook": "./imsPciCreator.min.js",
+        "src" : [
+            "./imsPciCreator.js",
+            "./creator/widget/Widget.js",
+            "./creator/widget/states/states.js",
+            "./creator/widget/states/Question.js"
+        ]
+    }
+
+}
