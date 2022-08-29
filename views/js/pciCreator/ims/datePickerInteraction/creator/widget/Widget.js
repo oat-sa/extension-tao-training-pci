@@ -4,12 +4,12 @@ define([
 ], function (Widget, states) {
     'use strict';
 
-    const DateTimePickerInteractionWidget = Widget.clone();
+    const DatePickerInteractionWidget = Widget.clone();
 
-    DateTimePickerInteractionWidget.initCreator = function () {
+    DatePickerInteractionWidget.initCreator = function () {
         this.registerStates(states);
         Widget.initCreator.call(this);
     };
 
-    return DateTimePickerInteractionWidget;
+    return DatePickerInteractionWidget;
 });
