@@ -18,7 +18,7 @@ define([
 
             //build picker
             const label = document.createElement('label');
-            label.textContent = 'Pick a date';
+            label.textContent = 'Please select a date : ';
             const picker = document.createElement('input');
             picker.type= 'date';
             if(config.properties.minDate) {

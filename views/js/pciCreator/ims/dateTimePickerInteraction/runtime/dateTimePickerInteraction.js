@@ -22,7 +22,7 @@ define([
             //build picker
             const container = dom.querySelector('.date-time-picker-interaction');
             const label = document.createElement('label');
-            label.textContent = 'Pick a date';
+            label.textContent = 'Select a date : ';
             const picker = document.createElement('input');
             picker.type= 'text';
 
@@ -65,6 +65,7 @@ define([
                             maxDate,
                             onChange(selectedDates, dateStr) {
                                 selectedDateTime = dateStr;
+                                setTimeout(() => picker.dispatchEvent(new Event('change')), 1);
                             },
                             onReady() {
                                 document.querySelector('.flatpickr-calendar').style.zIndex = 100000;

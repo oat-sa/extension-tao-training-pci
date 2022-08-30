@@ -47,12 +47,10 @@ define([
         formElement.setChangeCallbacks($form, interaction, {
             minDate(i, value) {
                 i.properties.minDate = value;
-                console.log('props', i.properties);
                 element.dispatchEvent(new CustomEvent('configChange', { detail : i.properties }));
             },
             maxDate(i, value) {
                 i.properties.maxDate = value;
-                console.log('props', i.properties);
                 element.dispatchEvent(new CustomEvent('configChange', { detail : i.properties }));
             },
         });
