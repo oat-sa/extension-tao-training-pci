@@ -31,18 +31,18 @@ define(['dateTimePickerInteraction/creator/widget/Widget'], function (Widget) {
          */
         getDefaultProperties() {
             return {
-                minDate: false,
-                maxDate: false
+                minDate: '',
+                maxDate: ''
             };
         },
 
         /**
          * (optional) Callback to execute on the
-         * Used on new pci instance creation
+         * new pci instance creation
          *
          * @returns {Object}
          */
-        afterCreatedt() {},
+        afterCreate() {},
 
         /**
          * (required) Gives the qti pci markup template
